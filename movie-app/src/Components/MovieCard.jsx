@@ -1,20 +1,32 @@
-// src/components/MovieCard.jsx
-
 const MovieCard = ({ movie }) => {
-    return (
-      <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition transform hover:-translate-y-1">
+  return (
+    <div className="w-[160px] flex-shrink-0 rounded-lg overflow-hidden relative">
+      {/* poster */}
+      <div className="relative">
         <img
           src={movie.poster}
           alt={movie.title}
-          className="w-full h-64 object-cover"
+          className="w-full h-[240px] object-cover"
         />
-        <div className="p-4">
-          <h3 className="text-lg font-semibold text-gray-800 mb-1">{movie.title}</h3>
-          <p className="text-sm text-gray-600">⭐ IMDb: {movie.rating}</p>
+
+        {/* rating circle – now half-over the bottom edge */}
+        <div className="absolute -bottom-4 left-2 w-10 h-10 rounded-full
+                        bg-black text-white text-xs font-bold flex items-center
+                        justify-center border-4 border-white shadow">
+          {movie.rating}
         </div>
       </div>
-    );
-  };
-  
-  export default MovieCard;
-  
+
+      {/* title + date */}
+      <div className="mt-6 text-center px-1 pb-4">
+        <h3 className="text-[15px] font-semibold leading-tight truncate">
+          {movie.title}
+        </h3>
+        <p className="text-xs text-gray-500 mt-1 flex items-center justify-center gap-1">
+          📅 {movie.release_date}
+        </p>
+      </div>
+    </div>
+  );
+};
+export default MovieCard;
