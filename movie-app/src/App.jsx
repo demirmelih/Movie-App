@@ -8,11 +8,10 @@ import './App.css'
 function App() {
   return (
     <>
-    <Navbar />
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/movie/:id" element={<MovieDetails />} />
-    </Routes>
+      <Navbar />
+      <div className="p-4">
+        <h1 className="text-2xl font-bold">Welcome to Movie App</h1>
+      </div>
     </>
   );
 }
