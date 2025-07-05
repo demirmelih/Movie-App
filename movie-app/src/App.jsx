@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
 
 import './App.css'
 
@@ -9,9 +11,9 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className="p-4">
-        <h1 className="text-2xl font-bold">Welcome to Movie App</h1>
-      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
     </>
   );
 }
